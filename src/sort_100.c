@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:05:47 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/10 11:54:05 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/10 11:54:36 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	sort(t_stack **stack_a, t_stack **stack_b, int len)
 	int	rr_cost;
 
 	r_cost = calculate_r_cost((*stack_a)->value, stack_b);
-	rr_cost = calculate_rr                         _cost((*stack_a)->value, stack_b);
+	rr_cost = calculate_rr_cost((*stack_a)->value, stack_b);
 }
 
 void	sort_100(t_stack **stack_a, t_stack **stack_b, int len)
