@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:50:32 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/10 11:50:14 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:30:58 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,17 @@ int	main(int argc, char **argv)
 	make_stack(&stack_a, argv);
 	stack_b = NULL;
 	argc--;
-	printf("r :%d et rr : %d\n", calculate_r_cost(3, &stack_a), calculate_rr_cost(3, &stack_a));
-	/*if (stack_is_sorted(stack_a) != 0)
+	ft_stack_p(&stack_b, &stack_a, "pb\n");
+	ft_stack_p(&stack_b, &stack_a, "pb\n");
+	ft_stack_p(&stack_b, &stack_a, "pb\n");
+	ft_stack_p(&stack_b, &stack_a, "pb\n");
+	ft_stack_p(&stack_b, &stack_a, "pb\n");
+	print_stack(stack_a);
+	printf(" -- \n");
+	print_stack(stack_b);
+	//print_stack(stack_a);
+	//printf("\nr :%d et rr : %d\n", calculate_r_cost(11, &stack_a), calculate_rr_cost(11, &stack_a));
+	if (stack_is_sorted(stack_a) != 0)
 	{
 		if (argc <= 5)
 			small_sort(&stack_a, &stack_b, argc);
@@ -55,7 +64,7 @@ int	main(int argc, char **argv)
 			sort_100(&stack_a, &stack_b, argc);
 		else
 			big_sort(&stack_a, &stack_b, argc);
-	}*/
+	}
 	free_stack(&stack_a);
 	return (0);
 }

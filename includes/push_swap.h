@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:49:24 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/10 11:47:00 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/10 12:50:30 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ typedef struct s_stack
 	int				value;
 	struct s_stack	*next;
 }					t_stack;
+
+typedef struct s_cost
+{
+	int	rr_cost;
+	int	rr_place;
+	int	r_cost;
+	int	r_place;
+}				t_cost;
 
 /*tmp*/
 void	print_stack(t_stack *stack);//to_remove
