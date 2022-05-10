@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:49:24 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/10 15:13:49 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:34:51 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ typedef struct s_cost
 	int	rr_place;
 	int	rb_cost;
 	int	r_place;
+	int	rra_cost;
+	int	ra_cost;
 }				t_cost;
 
 /*tmp*/
@@ -52,9 +54,9 @@ void	sort_4(t_stack **a, t_stack **b);
 void	sort_3(t_stack **a);
 
 /*sort_100*/
-int		calculate_r_cost(int nb, t_stack **stack_b);
-int		calculate_rr_cost(int nb, t_stack **stack_b);
-void	sort_100(t_stack **stack_a, t_stack **stack_b, int len);
+int		count_r(int nb, t_stack **stack_b);
+int		count_rr(int nb, t_stack **stack_b);
+void	sort_100(t_stack **stack_a, t_stack **stack_b, int len, t_cost	**move);
 
 /*big_sort*/
 void	big_sort(t_stack **stack_a, t_stack **stack_b, int len);

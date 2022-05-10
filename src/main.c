@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:50:32 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/10 13:30:58 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:31:55 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,11 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	t_cost	*move;
 
+	move = malloc(sizeof(t_cost));
+	if (!move)
+		ft_error("malloc error\n");
 	check_arg(argv);
 	make_stack(&stack_a, argv);
 	stack_b = NULL;
@@ -61,7 +65,7 @@ int	main(int argc, char **argv)
 		if (argc <= 5)
 			small_sort(&stack_a, &stack_b, argc);
 		else if (argc <= 100)
-			sort_100(&stack_a, &stack_b, argc);
+			sort_100(&stack_a, &stack_b, argc, &move);
 		else
 			big_sort(&stack_a, &stack_b, argc);
 	}
