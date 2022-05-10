@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:49:24 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/10 12:50:30 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:13:49 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ typedef struct s_stack
 
 typedef struct s_cost
 {
-	int	rr_cost;
+	int	rrb_cost;
 	int	rr_place;
-	int	r_cost;
+	int	rb_cost;
 	int	r_place;
 }				t_cost;
 
