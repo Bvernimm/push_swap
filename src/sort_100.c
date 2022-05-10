@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:05:47 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/10 15:17:22 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:19:07 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,24 +77,15 @@ void	sort_100(t_stack **a, t_stack **b, int len)
 
 	move = malloc(sizeof(t_cost));
 	printf("pushing %d on %d\n", (*a)->value, (*b)->value);
-	//modify_move(&move, 1, 0, calculate_r_cost(tmp->value, stack_b));
-	/*move->rb_cost = calculate_r_cost((*a)->value, b);
-	move->rrb_cost = calculate_rr_cost((*a)->value, b);
-	move->r_place = 0;
-	move->rr_place = 0;*/
+	modify_move(&move, 1, 0, calculate_r_cost((*a)->value, b));
+	modify_move(&move, 2, 0, calculate_rr_cost((*a)->value, b));
 	i = 0;
 	while (i < len - 1)
 	{
 		if (move->rb_cost > calculate_r_cost((*a)->value, b) + i)
-		{
-			move->rb_cost = calculate_r_cost((*a)->value, b) + i;
-			move->r_place = i;
-		}
+			modify_move(&move, 1, i, calculate_r_cost((*a)->value, b));
 		if (move->rrb_cost > calculate_rr_cost((*a)->value, b) + i)
-		{
-			move->rrb_cost = calculate_rr_cost((*a)->value, b) + i;
-			move->rr_place = i;
-		}
+			modify_move(&move, 2, i, calculate_rr_cost((*a)->value, b));
 		i++;
 		if ((*a)->next)
 			(*a) = (*a)->next;
