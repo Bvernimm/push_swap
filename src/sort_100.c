@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:05:47 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/10 15:19:07 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:23:25 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	sort_100(t_stack **a, t_stack **b, int len)
 	t_cost	*move;
 
 	move = malloc(sizeof(t_cost));
-	printf("pushing %d on %d\n", (*a)->value, (*b)->value);
 	modify_move(&move, 1, 0, calculate_r_cost((*a)->value, b));
 	modify_move(&move, 2, 0, calculate_rr_cost((*a)->value, b));
 	i = 0;
