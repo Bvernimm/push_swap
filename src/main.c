@@ -6,17 +6,11 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:50:32 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/09 14:16:39 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/10 09:25:45 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	error_free(t_stack **stack)
-{
-	free_stack(stack);
-	ft_error("malloc error\n");
-}
 
 void	ft_error(char *str)
 {

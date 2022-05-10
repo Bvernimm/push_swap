@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 11:55:51 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/09 14:15:13 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/10 09:30:01 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,6 @@ void	sort_3(t_stack **a)
 
 	smallest = stack_min(a);
 	biggest = stack_max(a);
-	ft_3_case(smallest, biggest);
-}
-
-void	ft_3_case(int smallest, int biggest)
-{
 	if (smallest == 2 && biggest == 3)
 		write (1, "sa\n", 3);
 	if (smallest == 3 && biggest == 1)

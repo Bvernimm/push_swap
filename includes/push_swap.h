@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:49:24 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/09 14:01:35 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/10 09:30:05 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,9 @@ typedef struct s_stack
 }					t_stack;
 
 /*tmp*/
-void	print_stack(t_stack *stack);
+void	print_stack(t_stack *stack);//to_remove
 
 /*main*/
-void	error_free(t_stack **stack);
 void	ft_error(char *str);
 int		stack_is_sorted(t_stack *stack);
 
@@ -43,7 +42,6 @@ void	small_sort(t_stack **stack_a, t_stack **stack_b, int len);
 void	sort_5(t_stack **a, t_stack **b);
 void	sort_4(t_stack **a, t_stack **b);
 void	sort_3(t_stack **a);
-void	ft_3_case(int smallest, int biggest);
 
 /*sort_100*/
 void	sort_100(t_stack **stack_a, t_stack **stack_b, int len);

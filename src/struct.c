@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:15:11 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/09 13:27:29 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/10 09:25:33 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ void	ft_lstadd_back(t_stack **stack_a, int nb)
 
 	new = malloc(sizeof(t_stack));
 	if (!new)
-		error_free(stack_a);
+	{
+		free_stack(stack_a);
+		ft_error("malloc error\n");
+	}
 	(*stack_a)->next = new;
 	new->previous = (*stack_a);
 	new->value = nb;
