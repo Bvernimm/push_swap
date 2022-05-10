@@ -6,7 +6,7 @@ INCLUDES = includes
 
 OBJ = $(SRC:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = #-Wall -Wextra -Werror
 
 CC = gcc
 

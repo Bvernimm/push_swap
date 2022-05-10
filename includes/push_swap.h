@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:49:24 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/10 09:30:05 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/10 11:47:00 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	sort_4(t_stack **a, t_stack **b);
 void	sort_3(t_stack **a);
 
 /*sort_100*/
+int		calculate_r_cost(int nb, t_stack **stack_b);
+int		calculate_rr_cost(int nb, t_stack **stack_b);
 void	sort_100(t_stack **stack_a, t_stack **stack_b, int len);
 
 /*big_sort*/
