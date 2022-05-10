@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:05:47 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/10 15:35:03 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:44:56 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,9 @@ void	sort_100(t_stack **a, t_stack **b, int len, t_cost	**move)
 	while ((*move)->ra_cost < len - 1)
 	{
 		if ((*move)->rb_cost > count_r((*a)->value, b) + (*move)->ra_cost)
-			modify_move(move, 1, (*move)->ra_cost, count_r((*a)->value, b));
+			modify_move(move, 1, (*move)->ra_cost, count_r((*a)->value, b) + (*move)->ra_cost);
 		if ((*move)->rrb_cost > count_rr((*a)->value, b) + (*move)->ra_cost)
-			modify_move(move, 2, (*move)->ra_cost, count_rr((*a)->value, b));
+			modify_move(move, 2, (*move)->ra_cost, count_rr((*a)->value, b) + (*move)->ra_cost);
 		(*move)->ra_cost++;
 		if ((*a)->next)
 			(*a) = (*a)->next;
