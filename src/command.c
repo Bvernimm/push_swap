@@ -1,16 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   commanc.c                                          :+:      :+:    :+:   */
+/*   command.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:52:26 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/09 11:31:00 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 10:46:20 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_stack_2(t_stack **a, t_stack **b, char *command)
+{
+	if (ft_strcmp(command, "rr\n") == 0)
+	{
+		ft_stack_r(a, "");
+		ft_stack_r(b, "rr\n");
+	}
+	if (ft_strcmp(command, "rrr\n") == 0)
+	{
+		ft_stack_rr(a, "");
+		ft_stack_rr(b, "rrr\n");
+	}
+	if (ft_strcmp(command, "ss\n") == 0)
+	{
+		ft_stack_s(a, "");
+		ft_stack_s(b, "ss\n");
+	}
+}
 
 void	ft_stack_s(t_stack **a, char *command)
 {

@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:50:32 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 09:51:02 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 11:05:10 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int	main(int argc, char **argv)
 	ft_stack_p(&stack_b, &stack_a, "pb\n");
 	ft_stack_p(&stack_b, &stack_a, "pb\n");
 	ft_stack_p(&stack_b, &stack_a, "pb\n");
+	ft_stack_p(&stack_b, &stack_a, "pb\n");
 	print_stack(stack_a);
 	printf(" -- \n");
 	print_stack(stack_b);
@@ -67,11 +68,11 @@ int	main(int argc, char **argv)
 		else if (argc <= 100)
 			sort_100(&stack_a, &stack_b, argc - 5, &move);
 			//sort_100(&stack_a, &stack_b, argc, &move);
-		else
-			big_sort(&stack_a, &stack_b, argc);
 	}
 	printf(" result : \n");
 	print_stack(stack_a);
+	printf(" -- \n");
+	print_stack(stack_b);
 	free_stack(&stack_a);
 	return (0);
 }
