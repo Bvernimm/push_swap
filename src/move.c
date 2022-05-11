@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:51:57 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 15:18:53 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:23:36 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	three_first_push(t_stack **a, t_stack **b)
 {
 	ft_stack_p(b, a, "pb\n");
 	ft_stack_p(b, a, "pb\n");
-	if ((*b)->value < (*b)->next->value)
+	if ((*b)->value > (*b)->next->value)
 	{
 		if ((*a)->value > (*b)->value && (*a)->value < (*b)->next->value)
 		{
@@ -26,7 +26,7 @@ void	three_first_push(t_stack **a, t_stack **b)
 		else
 			ft_stack_p(b, a, "pb\n");
 	}
-	else if ((*b)->value > (*b)->next->value)
+	else if ((*b)->value < (*b)->next->value)
 	{
 		if ((*a)->value < (*b)->value && (*a)->value > (*b)->next->value)
 			ft_stack_p(b, a, "pb\n");
