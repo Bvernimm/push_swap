@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:49:24 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/10 15:34:51 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 10:04:03 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ typedef struct s_cost
 	int	rr_place;
 	int	rb_cost;
 	int	r_place;
-	int	rra_cost;
-	int	ra_cost;
+	int	best_place;
+	int	best_in_a;
+	int	best_in_b;
 }				t_cost;
 
 /*tmp*/
@@ -54,9 +55,12 @@ void	sort_4(t_stack **a, t_stack **b);
 void	sort_3(t_stack **a);
 
 /*sort_100*/
-int		count_r(int nb, t_stack **stack_b);
-int		count_rr(int nb, t_stack **stack_b);
+int		count_r(int nb, t_stack **stack_b, int ra, int len);
+int		count_rr(int nb, t_stack **stack_b, int ra, int len);
+void	modify_move(t_cost **move, int r, int place, int cost);
 void	sort_100(t_stack **stack_a, t_stack **stack_b, int len, t_cost	**move);
+void	calculate_best_move(t_stack **a, t_stack **b, int len, t_cost	**move);
+void	push_to_b(t_stack **a, t_stack **b, int len, t_cost	**move);
 
 /*big_sort*/
 void	big_sort(t_stack **stack_a, t_stack **stack_b, int len);
