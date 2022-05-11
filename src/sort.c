@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:05:47 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 11:12:25 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 12:53:14 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,46 +52,6 @@ void	sort_100(t_stack **a, t_stack **b, int len, t_cost	**move)
 	calculate_best_move(b, len, move);
 	printf("best place : %d, best in a : %d and best in b : %d\n", (*move)->best_place, (*move)->best_in_a, (*move)->best_in_b);
 	push_to_b(a, b, move);
-}
-
-void	push_to_b(t_stack **a, t_stack **b, t_cost	**move)
-{
-	while ((*move)->best_in_a > 0 && (*move)->best_in_b > 0)
-	{
-		ft_stack_2(a, b, "rr\n");
-		(*move)->best_in_a--;
-		(*move)->best_in_b--;
-	}
-	while ((*move)->best_in_a < 0 && (*move)->best_in_b < 0)
-	{
-		ft_stack_2(a, b, "rrr\n");
-		(*move)->best_in_a++;
-		(*move)->best_in_b++;
-	}
-	push_to_b_bis(a, b, move);
-}
-
-void	push_to_b_bis(t_stack **a, t_stack **b, t_cost	**move)
-{
-	while ((*move)->best_in_a > 0)
-	{
-		ft_stack_r(a, "ra\n");
-		(*move)->best_in_a--;
-	}
-	while ((*move)->best_in_b > 0)
-	{
-		ft_stack_r(b, "rb\n");
-		(*move)->best_in_b--;
-	}
-	while ((*move)->best_in_a < 0)
-	{
-		ft_stack_rr(a, "rra\n");
-		(*move)->best_in_a++;
-	}
-	while ((*move)->best_in_b < 0)
-	{
-		ft_stack_rr(b, "rrb\n");
-		(*move)->best_in_b++;
-	}
-	ft_stack_p(b, a, "pb\n");
+	//if ((*a)->next)
+	//	sort_100(a, b, len - 1, move);
 }

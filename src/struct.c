@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:15:11 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/10 09:25:33 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:58:22 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,52 +62,4 @@ void	free_stack(t_stack **stack)
 		tmp->value = 0;
 		free(tmp);
 	}
-}
-
-int	stack_min(t_stack **stack)
-{
-	int		ret;
-	int		i;
-	int		smallest;
-	t_stack	*tmp;
-
-	tmp = (*stack);
-	smallest = tmp->value;
-	ret = 1;
-	i = 1;
-	while (tmp)
-	{
-		if (smallest > tmp->value)
-		{
-			smallest = tmp->value;
-			ret = i;
-		}
-		i++;
-		tmp = tmp->next;
-	}
-	return (ret);
-}
-
-int	stack_max(t_stack **stack)
-{
-	int		ret;
-	int		i;
-	int		biggest;
-	t_stack	*tmp;
-
-	tmp = (*stack);
-	biggest = tmp->value;
-	ret = 1;
-	i = 1;
-	while (tmp)
-	{
-		if (biggest < tmp->value)
-		{
-			biggest = tmp->value;
-			ret = i;
-		}
-		i++;
-		tmp = tmp->next;
-	}
-	return (ret);
 }

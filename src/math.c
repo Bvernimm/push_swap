@@ -6,11 +6,53 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:07:50 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 11:08:27 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 14:26:17 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	extreme_r(t_stack **stack_b, int len, int nb)
+{
+	int	pos;
+	int	val;
+
+	pos = stack_min(stack_b);
+	val = get_val(stack_b, pos);
+	if (nb < val)
+		return (stack_min(stack_b));
+	pos = stack_max(stack_b);
+	val = get_val(stack_b, pos);
+	if (nb > val)
+		return (stack_min(stack_b));
+	return (1);
+}
+
+int	extreme_rr(t_stack **stack_b, int len, int nb)
+{
+	int	pos;
+	int	val;
+
+	pos = stack_min(stack_b);
+	val = get_val(stack_b, pos);
+	if (nb < val)
+	{
+		if (stack_min(stack_b) == 1)
+			return (1);
+		else
+			return (len - stack_min(stack_b) + 2);
+	}
+	pos = stack_max(stack_b);
+	val = get_val(stack_b, pos);
+	if (nb > val)
+	{
+		if (stack_min(stack_b) == 1)
+			return (1);
+		else
+			return (len - stack_min(stack_b) + 2);
+	}
+	return (1);
+}
 
 int	count_rr(int nb, t_stack **stack_b, int ra, int len)
 {
@@ -33,7 +75,7 @@ int	count_rr(int nb, t_stack **stack_b, int ra, int len)
 		tmp = tmp->previous;
 	}
 	if (!tmp->previous)
-		return (1 + ra);
+		return (extreme_rr(stack_b, len, nb) + ra);
 	return (rr_cost + ra);
 }
 
@@ -56,7 +98,7 @@ int	count_r(int nb, t_stack **stack_b, int ra, int len)
 		tmp = tmp->next;
 	}
 	if (!tmp->next)
-		return (1 + ra);
+		return (extreme_r(stack_b, len, nb) + ra);
 	return (r_cost + ra);
 }
 

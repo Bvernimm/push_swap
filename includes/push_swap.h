@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:49:24 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 11:12:38 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:59:35 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,9 @@ void	sort_3(t_stack **a);
 /*sort*/
 void	modify_move(t_cost **move, int r, int place, int cost);
 void	sort_100(t_stack **stack_a, t_stack **stack_b, int len, t_cost	**move);
+
+/*move*/
+void	three_first_push(t_stack **a, t_stack **b);
 void	push_to_b(t_stack **a, t_stack **b, t_cost	**move);
 void	push_to_b_bis(t_stack **a, t_stack **b, t_cost	**move);
 
@@ -76,6 +79,9 @@ long	ft_atoi(const char *str);
 void	make_stack(t_stack **stack, char **argv);
 void	ft_lstadd_back(t_stack **stack_a, int nb);
 void	free_stack(t_stack **stack);
+
+/*min_max*/
+int		get_val(t_stack **stack, int pos);
 int		stack_min(t_stack **stack);
 int		stack_max(t_stack **stack);
 
