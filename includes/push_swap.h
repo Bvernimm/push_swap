@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:49:24 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 14:51:59 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:17:39 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	sort_100(t_stack **stack_a, t_stack **stack_b, int len, t_cost	**move);
 void	three_first_push(t_stack **a, t_stack **b);
 void	push_to_b(t_stack **a, t_stack **b, t_cost	**move);
 void	push_to_b_bis(t_stack **a, t_stack **b, t_cost	**move);
+void	back_to_a(t_stack **a, t_stack **b);
 
 /*math*/
 int		count_r(int nb, t_stack **stack_b, int ra, int len);

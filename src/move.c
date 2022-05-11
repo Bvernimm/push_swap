@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:51:57 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 15:10:25 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:18:53 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,13 @@ void	push_to_b_bis(t_stack **a, t_stack **b, t_cost	**move)
 		ft_stack_rr(b, "rrb\n");
 		(*move)->best_in_b++;
 	}
-	/*if (!(*a)->next)
-	{
-		printf("stop\n");
-		print_stack(*a);
-		printf(" -- \n");
-		print_stack(*b);
-		exit (0);
-	}*/
 	ft_stack_p(b, a, "pb\n");
+}
+
+void	back_to_a(t_stack **a, t_stack **b)
+{
+	int	max;
+	int	len;
+
+	len = stack_len(b);
 }

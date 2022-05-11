@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:50:32 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 15:11:16 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:15:55 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,24 +50,21 @@ int	main(int argc, char **argv)
 	check_arg(argv);
 	make_stack(&stack_a, argv);
 	stack_b = NULL;
-	argc = argc - 4;
-	three_first_push(&stack_a, &stack_b);
-	print_stack(stack_a);
+	/*print_stack(stack_a);
 	printf(" -- \n");
 	print_stack(stack_b);
-	printf("\n");
-	/*if (stack_is_sorted(stack_a) != 0)
+	printf("\n");*/
+	if (stack_is_sorted(stack_a) != 0)
 	{
 		if (argc <= 5)
 			small_sort(&stack_a, &stack_b, argc);
-		else if (argc <= 100)
+		else
+		{
+			argc = argc - 4;
+			three_first_push(&stack_a, &stack_b);
 			sort_100(&stack_a, &stack_b, argc, &move);
-	}*/
-	sort_100(&stack_a, &stack_b, argc, &move);
-	//sort_100(&stack_a, &stack_b, argc - 1, &move);
-	//sort_100(&stack_a, &stack_b, argc - 2, &move);
-	//sort_100(&stack_a, &stack_b, argc - 3, &move);
-	//sort_100(&stack_a, &stack_b, argc - 4, &move);
+		}
+	}
 	printf(" result : \n");
 	print_stack(stack_a);
 	printf(" -- \n");
