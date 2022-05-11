@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:05:47 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 11:08:31 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 11:12:25 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ void	sort_100(t_stack **a, t_stack **b, int len, t_cost	**move)
 		(*a) = (*a)->previous;
 	calculate_best_move(b, len, move);
 	printf("best place : %d, best in a : %d and best in b : %d\n", (*move)->best_place, (*move)->best_in_a, (*move)->best_in_b);
-	push_to_b(a, b, len, move);
+	push_to_b(a, b, move);
 }
 
-void	push_to_b(t_stack **a, t_stack **b, int len, t_cost	**move)
+void	push_to_b(t_stack **a, t_stack **b, t_cost	**move)
 {
 	while ((*move)->best_in_a > 0 && (*move)->best_in_b > 0)
 	{
@@ -68,6 +68,11 @@ void	push_to_b(t_stack **a, t_stack **b, int len, t_cost	**move)
 		(*move)->best_in_a++;
 		(*move)->best_in_b++;
 	}
+	push_to_b_bis(a, b, move);
+}
+
+void	push_to_b_bis(t_stack **a, t_stack **b, t_cost	**move)
+{
 	while ((*move)->best_in_a > 0)
 	{
 		ft_stack_r(a, "ra\n");
