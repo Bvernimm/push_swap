@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:52:26 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 10:46:20 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:09:45 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,13 @@ void	ft_stack_p(t_stack **dest, t_stack **src, char *command)
 	t_stack	*tmp;
 
 	tmp = (*src);
-	(*src) = (*src)->next;
-	(*src)->previous = NULL;
+	if ((*src)->next)
+	{
+		(*src) = (*src)->next;
+		(*src)->previous = NULL;
+	}
+	else
+		(*src) = NULL;
 	tmp->previous = NULL;
 	tmp->next = (*dest);
 	if ((*dest) != NULL)

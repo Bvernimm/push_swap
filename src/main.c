@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:50:32 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 14:54:26 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:11:16 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_error(char *str)
 {
-	(void)str;
-	write (2, "Error\n", 6);
+	//(void)str;
+	//write (2, "Error\n", 6);
+	printf("%s\n", str);
 	exit (0);
 }
 
@@ -55,8 +56,6 @@ int	main(int argc, char **argv)
 	printf(" -- \n");
 	print_stack(stack_b);
 	printf("\n");
-	//print_stack(stack_a);
-	//printf("\nr :%d et rr : %d\n", calculate_r_cost(11, &stack_a), calculate_rr_cost(11, &stack_a));
 	/*if (stack_is_sorted(stack_a) != 0)
 	{
 		if (argc <= 5)
@@ -65,14 +64,17 @@ int	main(int argc, char **argv)
 			sort_100(&stack_a, &stack_b, argc, &move);
 	}*/
 	sort_100(&stack_a, &stack_b, argc, &move);
-	sort_100(&stack_a, &stack_b, argc - 1, &move);
-	sort_100(&stack_a, &stack_b, argc - 2, &move);
-	sort_100(&stack_a, &stack_b, argc - 3, &move);
-	sort_100(&stack_a, &stack_b, argc - 4, &move);
+	//sort_100(&stack_a, &stack_b, argc - 1, &move);
+	//sort_100(&stack_a, &stack_b, argc - 2, &move);
+	//sort_100(&stack_a, &stack_b, argc - 3, &move);
+	//sort_100(&stack_a, &stack_b, argc - 4, &move);
 	printf(" result : \n");
 	print_stack(stack_a);
 	printf(" -- \n");
 	print_stack(stack_b);
-	free_stack(&stack_a);
+	if (stack_a)
+		free_stack(&stack_a);
+	if (stack_b)
+		free_stack(&stack_b);
 	return (0);
 }

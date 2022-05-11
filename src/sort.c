@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:05:47 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 12:53:14 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:01:07 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,15 @@ void	sort_100(t_stack **a, t_stack **b, int len, t_cost	**move)
 		if ((*a)->next)
 			(*a) = (*a)->next;
 	}
-	printf("r cost : %d, place %d, value %d\n", (*move)->rb_cost, (*move)->r_place, (*move)->r_value);
-	printf("rr cost : %d, place %d, value %d\n", (*move)->rrb_cost, (*move)->rr_place, (*move)->rr_value);
+	//printf("r cost : %d, place %d, value %d\n", (*move)->rb_cost, (*move)->r_place, (*move)->r_value);
+	//printf("rr cost : %d, place %d, value %d\n", (*move)->rrb_cost, (*move)->rr_place, (*move)->rr_value);
 	while ((*a)->previous)
 		(*a) = (*a)->previous;
 	calculate_best_move(b, len, move);
-	printf("best place : %d, best in a : %d and best in b : %d\n", (*move)->best_place, (*move)->best_in_a, (*move)->best_in_b);
+	//printf("best place : %d, best in a : %d and best in b : %d\n", (*move)->best_place, (*move)->best_in_a, (*move)->best_in_b);
 	push_to_b(a, b, move);
-	//if ((*a)->next)
-	//	sort_100(a, b, len - 1, move);
+	if ((*a))
+		sort_100(a, b, len - 1, move);
+	//else
+	//	back_to_a(a, b);
 }

@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:07:50 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 14:53:37 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:03:03 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	extreme_rr(t_stack **stack_b, int len, int nb)
 	val = get_val(stack_b, pos);
 	if (nb < val)
 	{
-		printf("%d is a min, len : %d et min_pos : %d\n", nb, len, stack_min(stack_b));
 		if (stack_min(stack_b) == 1)
 			return (1);
 		else
