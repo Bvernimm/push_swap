@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:50:32 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 14:10:21 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 14:54:26 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ int	main(int argc, char **argv)
 	}*/
 	sort_100(&stack_a, &stack_b, argc, &move);
 	sort_100(&stack_a, &stack_b, argc - 1, &move);
-	//sort_100(&stack_a, &stack_b, argc - 2, &move);
-	//sort_100(&stack_a, &stack_b, argc - 3, &move);
-	//sort_100(&stack_a, &stack_b, argc - 4, &move);
+	sort_100(&stack_a, &stack_b, argc - 2, &move);
+	sort_100(&stack_a, &stack_b, argc - 3, &move);
+	sort_100(&stack_a, &stack_b, argc - 4, &move);
 	printf(" result : \n");
 	print_stack(stack_a);
 	printf(" -- \n");

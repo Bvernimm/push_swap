@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:07:50 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 14:26:17 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 14:53:37 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	extreme_rr(t_stack **stack_b, int len, int nb)
 	val = get_val(stack_b, pos);
 	if (nb < val)
 	{
+		printf("%d is a min, len : %d et min_pos : %d\n", nb, len, stack_min(stack_b));
 		if (stack_min(stack_b) == 1)
 			return (1);
 		else
@@ -75,7 +76,7 @@ int	count_rr(int nb, t_stack **stack_b, int ra, int len)
 		tmp = tmp->previous;
 	}
 	if (!tmp->previous)
-		return (extreme_rr(stack_b, len, nb) + ra);
+		return (extreme_rr(stack_b, stack_len(stack_b), nb) + ra);
 	return (rr_cost + ra);
 }
 
@@ -98,16 +99,19 @@ int	count_r(int nb, t_stack **stack_b, int ra, int len)
 		tmp = tmp->next;
 	}
 	if (!tmp->next)
-		return (extreme_r(stack_b, len, nb) + ra);
+		return (extreme_r(stack_b, stack_len(stack_b), nb) + ra);
 	return (r_cost + ra);
 }
 
 void	calculate_best_move(t_stack **b, int len, t_cost	**move)
 {
+	int	lenb;
+
+	lenb = stack_len(b);
 	if ((*move)->rb_cost <= (*move)->rrb_cost)
 	{
 		(*move)->best_place = (*move)->r_place;
-		(*move)->best_in_b = count_r((*move)->r_value, b, 0, 5) - 1;
+		(*move)->best_in_b = count_r((*move)->r_value, b, 0, lenb) - 1;
 		if ((*move)->r_place > len / 2)
 			(*move)->best_in_a = (len - (*move)->r_place) * -1;
 		else
@@ -116,7 +120,7 @@ void	calculate_best_move(t_stack **b, int len, t_cost	**move)
 	else if ((*move)->rb_cost > (*move)->rrb_cost)
 	{
 		(*move)->best_place = (*move)->rr_place;
-		(*move)->best_in_b = (count_rr((*move)->rr_value, b, 0, 6) - 1) * -1;
+		(*move)->best_in_b = (count_rr((*move)->rr_value, b, 0, lenb) - 1) * -1;
 		if ((*move)->rr_place > len / 2)
 			(*move)->best_in_a = (len - (*move)->rr_place) * -1;
 		else

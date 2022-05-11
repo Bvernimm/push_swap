@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:49:24 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 13:59:35 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 14:51:59 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void	ft_lstadd_back(t_stack **stack_a, int nb);
 void	free_stack(t_stack **stack);
 
 /*min_max*/
+int		stack_len(t_stack **stack);
 int		get_val(t_stack **stack, int pos);
 int		stack_min(t_stack **stack);
 int		stack_max(t_stack **stack);

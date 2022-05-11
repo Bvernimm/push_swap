@@ -6,11 +6,26 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:57:49 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 14:01:43 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 14:54:11 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	stack_len(t_stack **stack)
+{
+	t_stack	*tmp;
+	int		len;
+
+	tmp = *stack;
+	len = 0;
+	while (tmp)
+	{
+		len++;
+		tmp = tmp->next;
+	}
+	return (len);
+}
 
 int	get_val(t_stack **stack, int pos)
 {
