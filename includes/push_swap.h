@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:49:24 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 10:46:33 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 11:09:06 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,15 @@ void	sort_5(t_stack **a, t_stack **b);
 void	sort_4(t_stack **a, t_stack **b);
 void	sort_3(t_stack **a);
 
-/*sort_100*/
-int		count_r(int nb, t_stack **stack_b, int ra, int len);
-int		count_rr(int nb, t_stack **stack_b, int ra, int len);
+/*sort*/
 void	modify_move(t_cost **move, int r, int place, int cost);
 void	sort_100(t_stack **stack_a, t_stack **stack_b, int len, t_cost	**move);
-void	calculate_best_move(t_stack **b, int len, t_cost	**move);
 void	push_to_b(t_stack **a, t_stack **b, int len, t_cost	**move);
 
-/*big_sort*/
-void	big_sort(t_stack **stack_a, t_stack **stack_b, int len);
+/*math*/
+int		count_r(int nb, t_stack **stack_b, int ra, int len);
+int		count_rr(int nb, t_stack **stack_b, int ra, int len);
+void	calculate_best_move(t_stack **b, int len, t_cost	**move);
 
 /*utils*/
 int		ft_strlen(const char *str);
