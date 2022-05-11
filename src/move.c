@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:51:57 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 15:23:36 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:33:23 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,17 @@ void	back_to_a(t_stack **a, t_stack **b)
 	int	len;
 
 	len = stack_len(b);
+	max = stack_max(b);
+	if (max <= len / 2)
+	{
+		while (stack_max(b) != 1)
+			ft_stack_r(b, "rb\n");
+	}
+	else if (max > len / 2)
+	{
+		while (stack_max(b) != 1)
+			ft_stack_rr(b, "rrb\n");
+	}
+	while (*b)
+		ft_stack_p(a, b, "pa\n");
 }

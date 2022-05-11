@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:05:47 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 15:29:34 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:32:40 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ void	sort_100(t_stack **a, t_stack **b, int len, t_cost	**move)
 	push_to_b(a, b, move);
 	if ((*a))
 		sort_100(a, b, len - 1, move);
-	//else
-	//	back_to_a(a, b);
+	else
+		back_to_a(a, b);
 }
