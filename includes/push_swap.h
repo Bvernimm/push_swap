@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:49:24 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 15:17:39 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/12 11:27:11 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-
-# include <stdio.h>//to_remove
 
 typedef struct s_stack
 {
@@ -37,9 +35,6 @@ typedef struct s_cost
 	int	best_in_a;
 	int	best_in_b;
 }				t_cost;
-
-/*tmp*/
-void	print_stack(t_stack *stack);//to_remove
 
 /*main*/
 void	ft_error(char *str);

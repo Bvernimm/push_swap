@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:50:32 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/12 09:48:27 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/12 11:27:01 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_error(char *str)
 {
 	(void)str;
 	write (2, "Error\n", 6);
-	//printf("%s\n", str);
 	exit (0);
 }
 
@@ -62,13 +61,7 @@ int	main(int argc, char **argv)
 			sort_100(&stack_a, &stack_b, argc, &move);
 		}
 	}
-	/*printf(" result : \n");
-	print_stack(stack_a);
-	printf(" a -- b \n");
-	print_stack(stack_b);*/
-	if (stack_a)
-		free_stack(&stack_a);
-	if (stack_b)
-		free_stack(&stack_b);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }
