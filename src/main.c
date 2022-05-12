@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:50:32 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/05/11 15:41:30 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/05/12 09:48:27 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ int	main(int argc, char **argv)
 			sort_100(&stack_a, &stack_b, argc, &move);
 		}
 	}
-	printf(" result : \n");
+	/*printf(" result : \n");
 	print_stack(stack_a);
-	printf(" -- \n");
-	print_stack(stack_b);
+	printf(" a -- b \n");
+	print_stack(stack_b);*/
 	if (stack_a)
 		free_stack(&stack_a);
 	if (stack_b)
